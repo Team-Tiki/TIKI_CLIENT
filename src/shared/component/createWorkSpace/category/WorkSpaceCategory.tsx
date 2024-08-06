@@ -22,7 +22,7 @@ interface WorkSpaceCategoryProps {
 
 const WorkSpaceCategory = ({ onNext, onCategory }: WorkSpaceCategoryProps) => {
   const { isOpen, close, toggle } = useOverlay();
-  const ref = useOutsideClick<HTMLDivElement>(close, 'select-container');
+  const ref = useOutsideClick<HTMLDivElement>(close);
 
   const [selected, setSelected] = useState('');
 

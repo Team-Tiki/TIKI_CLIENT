@@ -56,7 +56,7 @@ const ArchivingPage = () => {
     setSelectedId('selected');
   };
 
-  const sideBarRef = useOutsideClick(handleClose, 'TimeBlock');
+  const sideBarRef = useOutsideClick(handleClose);
 
   const selectedMonthNumber = parseInt(selectedMonth.split('월')[0]);
 

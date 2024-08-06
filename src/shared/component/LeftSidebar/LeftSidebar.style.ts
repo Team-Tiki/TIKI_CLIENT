@@ -66,4 +66,3 @@ export const settingStyle = css({
 
   bottom: '2.4rem',
 });
-
