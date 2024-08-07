@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 import Search from '@/common/asset/svg/search.svg?react';
 import Flex from '@/common/component/Flex/Flex';
 import Input from '@/common/component/Input/Input';
-import useDebounce from '@/common/hook/useDebounce';
+import { useDebounce } from '@/common/hook';
 
 interface TotalDocumentProps {
   selectedTabId: string;

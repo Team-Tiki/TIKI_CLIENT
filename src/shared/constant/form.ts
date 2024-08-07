@@ -19,6 +19,9 @@ export const SUPPORTING_TEXT = {
   EMAIL_INVALID: '유효하지 않은 이메일 주소입니다.',
   EMAIL_SUCCESS: '메일을 성공적으로 전송하였습니다.',
   EMAIL_EXPIRED: '인증 번호가 만료되었습니다.',
+  EMAIL_NOAUTH: '이메일을 인증해주세요.',
+
+  UNIV: '대학교를 선택해주세요.',
 
   PASSWORD: '비밀번호를 입력해주세요',
   PASSWORD_INVALID: '영문/숫자/특수문자를 사용해 8자 이상으로 만들어주세요.',
@@ -32,6 +35,8 @@ export const SUPPORTING_TEXT = {
 export const FORMATTED_DATE_MAXLENGTH = 10 as const;
 
 export const DATE_MAXLENGTH = 8 as const;
+
+export const AUTHCODE_MAXLENGTH = 6 as const;
 
 export const UNIV_EMAIL_FORMAT = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(ac\.kr|edu)$/;
 
