@@ -2,13 +2,22 @@ import { css } from '@emotion/react';
 
 import { theme } from '@/common/style/theme/theme';
 
-export const arrowStyle = css({
-  position: 'absolute',
-  top: '9.6rem',
+export const containerStyle = css({
+  width: '100%',
+  minWidth: '25rem',
 
+  borderRadius: '16px',
+
+  overflow: 'hidden',
+});
+
+export const arrowStyle = css({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+
+  position: 'absolute',
+  top: '9.6rem',
 
   zIndex: theme.zIndex.overlayBottom,
 

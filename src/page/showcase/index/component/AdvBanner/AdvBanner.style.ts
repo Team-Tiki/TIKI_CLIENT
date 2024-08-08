@@ -4,18 +4,17 @@ import { theme } from '@/common/style/theme/theme';
 
 export const containerStyle = (imageUrl: string) =>
   css({
-    position: 'relative',
-
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+
+    position: 'relative',
 
     width: '100%',
 
     padding: '5rem 0 5.8rem 6.4rem',
 
     borderRadius: '16px',
-
     backgroundImage: `url(${imageUrl})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',

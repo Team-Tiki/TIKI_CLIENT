@@ -10,30 +10,29 @@ import { useNavigate } from 'react-router-dom';
 import Flex from '@/common/component/Flex/Flex';
 import Heading from '@/common/component/Heading/Heading';
 
+import { PATH } from '@/shared/constant/path';
 import useCategoryListQuery from '@/shared/hook/api/useCategoryListQuery';
 
 const ShowcasePage = () => {
   const navigate = useNavigate();
-  const [selectedChip, setSelectedChip] = useState<string>('전체');
+  const [selectedChip, setSelectedChip] = useState('전체');
 
-  const { data: clubs } = useClubListQuery(selectedChip);
   const { data: categoryList } = useCategoryListQuery();
+  const { data: clubs } = useClubListQuery(selectedChip);
 
   return (
-    <div css={containerStyle}>
+    <section css={containerStyle}>
       <Flex tag="section" styles={{ direction: 'column', gap: '2.4rem', width: '100%' }}>
         <Heading tag="H4" css={{ fontWeight: 600 }}>
           우리 학교 동아리
         </Heading>
-        <div css={{ width: '100%', minWidth: '25rem', overflow: 'hidden', borderRadius: '16px' }}>
-          <BannerSlider />
-        </div>
+        <BannerSlider />
       </Flex>
 
-      <section css={chipStyle}>
-        {categoryList.data.categories.map((category) => (
+      <div css={chipStyle}>
+        {categoryList.data.categories.map((category, index) => (
           <CategoryChip
-            key={category}
+            key={index}
             onClick={() => {
               setSelectedChip(category);
             }}
@@ -41,7 +40,7 @@ const ShowcasePage = () => {
             {category}
           </CategoryChip>
         ))}
-      </section>
+      </div>
 
       <section css={clubProfileStyle}>
         {clubs?.data.teams.map((club) => {
@@ -52,13 +51,13 @@ const ShowcasePage = () => {
               detail={club.overview || ''}
               imageUrl={club.imageUrl}
               onClick={() => {
-                navigate('/comingsoon');
+                navigate(PATH.COMING_SOON);
               }}
             />
           );
         })}
       </section>
-    </div>
+    </section>
   );
 };
 
